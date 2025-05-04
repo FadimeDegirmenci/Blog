@@ -1,0 +1,82 @@
+﻿@model Müsekkin.Models.Content
+
+@{
+    ViewBag.Title = "İçerik Düzenle";
+}
+
+<h2>İçerik Düzenle</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div>
+        <label>Başlık:</label><br />
+        <input type="text" name="Title" value="@Model.Title" required />
+    </div>
+    <br />
+    <div>
+        <label>İçerik:</label><br />
+        <textarea name="Body" rows="5" cols="50">@Model.Body</textarea>
+    </div>
+    <br />
+    <div>
+        <label>Resim Yolu:</label><br />
+        <input type="text" name="ImagePath" value="@Model.ImagePath" />
+    </div>
+    <br />
+    <div>
+        <label>Video Yolu:</label><br />
+        <input type="text" name="VideoPath" value="@Model.VideoPath" />
+    </div>
+    <br />
+    <div>
+        <label>İçerik Türü:</label><br />
+        <select name="ContentType" required>
+            @if (Model.ContentType == "Yazi")
+            {
+                <option value="Yazi" selected>Yazı</option>
+                <option value="Resim">Resim</option>
+                <option value="Video">Video</option>
+            }
+            else if (Model.ContentType == "Resim")
+            {
+                <option value="Yazi">Yazı</option>
+                <option value="Resim" selected>Resim</option>
+                <option value="Video">Video</option>
+            }
+            else if (Model.ContentType == "Video")
+            {
+                <option value="Yazi">Yazı</option>
+                <option value="Resim">Resim</option>
+                <option value="Video" selected>Video</option>
+            }
+            else
+            {
+                <option value="Yazi">Yazı</option>
+                <option value="Resim">Resim</option>
+                <option value="Video">Video</option>
+            }
+        </select>
+    </div>
+    <br />
+    <div>
+        <label>Kategori:</label><br />
+        <select name="CategoryId" required>
+            @foreach (var category in ViewBag.Categories)
+            {
+                if (Model.CategoryId.ToString() == category.Value)
+                {
+                    <option value="@category.Value" selected>@category.Text</option>
+                }
+                else
+                {
+                    <option value="@category.Value">@category.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+    <div>
+        <button type="submit">Kaydet</button>
+    </div>
+</form>    

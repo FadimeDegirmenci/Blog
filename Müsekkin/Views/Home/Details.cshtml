@@ -1,0 +1,34 @@
+﻿@model Müsekkin.Models.Content
+
+@{
+    ViewData["Title"] = "İçerik Detayı";
+}
+
+<div class="container mt-5">
+
+    <h2 class="mb-4" style="color: #00b050;">@Model.Title</h2>
+
+    @if (Model.ContentType == "Yazi")
+    {
+        <p class="lead">@Model.Body</p>
+    }
+    else if (Model.ContentType == "Resim")
+    {
+        <img src="@Model.ImagePath" alt="Resim" class="img-fluid rounded" style="max-width: 600px; width: 100%; height: auto;" />
+    }
+    else if (Model.ContentType == "Video")
+    {
+        <video controls class="w-100 rounded" style="max-width: 600px; height: auto; margin-top: 20px;">
+            <source src="@Model.VideoPath" type="video/mp4">
+            Tarayıcınız video desteklemiyor.
+        </video>
+    }
+
+    <div class="mt-4">
+        <p><strong>Eklenme Tarihi:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy")</p>
+        <p><strong>Okunma Sayısı:</strong> @Model.ViewCount</p>
+    </div>
+
+    <a href="/Home/Index" class="btn btn-success mt-4">← Ana Sayfaya Dön</a>
+
+</div>

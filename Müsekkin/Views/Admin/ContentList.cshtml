@@ -1,0 +1,37 @@
+﻿@model List<Müsekkin.Models.Content>
+
+@{
+    ViewBag.Title = "İçerik Listesi";
+}
+
+<h2>İçerik Listesi</h2>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>İçerik Türü</th>
+            <th>Okunma Sayısı</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var content in Model)
+        {
+            <tr>
+                <td>@content.Title</td>
+                <td>@content.ContentType</td>
+                <td>@content.ViewCount</td>
+               
+                <td>
+                    <a href="/Admin/Edit/@content.Id">Düzenle</a> |
+                    <a href="/Admin/Delete/@content.Id" onclick="return confirm('Bu içeriği silmek istediğine emin misin?');">Sil</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

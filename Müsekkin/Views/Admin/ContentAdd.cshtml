@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "İçerik Ekleme";
+}
+
+<h2>Yeni İçerik Ekle</h2>
+
+<form asp-action="ContentAdd" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Başlık:</label><br />
+        <input type="text" name="Title" required />
+    </div>
+    <br />
+    <div>
+        <label>İçerik:</label><br />
+        <textarea name="Body" rows="5" cols="50"></textarea>
+    </div>
+    <br />
+    <div>
+        <label>Resim Yükle:</label><br />
+        <input type="file" name="ImageFile" />
+    </div>
+    <br />
+    <div>
+        <label>Video Yükle:</label><br />
+        <input type="file" name="VideoFile" />
+    </div>
+    <br />
+    <div>
+        <label>İçerik Türü:</label><br />
+        <select name="ContentType" required>
+            <option value="Yazi">Yazı</option>
+            <option value="Resim">Resim</option>
+            <option value="Video">Video</option>
+        </select>
+    </div>
+    <br />
+    <div>
+        <label>Kategori:</label><br />
+        <select name="CategoryId" required>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.Value">@category.Text</option>
+            }
+        </select>
+    </div>
+    <br />
+    <div>
+        <button type="submit">İçeriği Ekle</button>
+    </div>
+</form>

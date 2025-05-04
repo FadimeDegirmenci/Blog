@@ -1,0 +1,93 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Tüm site genel font ayarý */
+body {
+    font-family: 'Patrick Hand', cursive;
+}
+
+/* Logo özel renkler */
+.logo-green {
+    color: #00b050;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.logo-gray {
+    color: #555;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+/* Menü linkleri */
+.menu-link {
+    color: #555;
+    font-size: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+    .menu-link:hover {
+        color: #00b050;
+    }
+
+/* Dropdown menü */
+.dropdown-menu {
+    font-size: 18px;
+}
+
+/* Arama kutusu */
+.search-input {
+    border-radius: 25px;
+    background-color: #f1f3f5;
+    border: none;
+    padding-left: 40px;
+}
+
+/* Butonlar */
+.search-button, .login-button, .register-button {
+    border-radius: 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+    .search-button:hover, .login-button:hover, .register-button:hover {
+        background-color: #218838;
+    }
+/* Sosyal Medya Ýkonlarý */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f1f3f5;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+    .social-icon:hover {
+        border: 2px solid #00b050; /* Yeþil çerçeve */
+        background-color: #ffffff; /* Hafif beyaz zemin */
+    }

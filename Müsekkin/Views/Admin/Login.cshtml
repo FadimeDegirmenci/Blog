@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Giriş Yap";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh; background-color: #f1f3f5;">
+    <div class="card p-5 shadow" style="max-width: 400px; width: 100%; border-radius: 20px;">
+        <h2 class="text-center mb-4" style="font-weight: bold;">Giriş Yap</h2>
+
+        <form asp-action="Login" method="post">
+
+            <div class="mb-3">
+                <input type="text" name="username" class="form-control" placeholder="E-Mail Adresiniz" required />
+            </div>
+
+            <div class="mb-4">
+                <input type="password" name="password" class="form-control" placeholder="Şifreniz" required />
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-success rounded-pill" style="padding: 10px;">Giriş Yap</button>
+            </div>
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger text-center" role="alert">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+
+            <div class="text-center mt-3">
+                <span>Üye Değil misin? <a href="/Admin/Register" style="color: #00b050; text-decoration: none;">Kayıt Ol.</a></span>
+            </div>
+
+            <div class="text-center mt-2">
+                <span>Şifreni mi unuttun? <a href="#" style="color: #00b050; text-decoration: none;">Şifre Sıfırla.</a></span>
+            </div>
+
+        </form>
+    </div>
+</div>

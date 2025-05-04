@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|c:\\users\\lenovo\\source\\repos\\m\u00FCsekkin\\m\u00FCsekkin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|solutionrelative:m\u00FCsekkin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|c:\\users\\lenovo\\source\\repos\\m\u00FCsekkin\\m\u00FCsekkin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|solutionrelative:m\u00FCsekkin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|c:\\users\\lenovo\\source\\repos\\m\u00FCsekkin\\m\u00FCsekkin\\views\\admin\\contentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|solutionrelative:m\u00FCsekkin\\views\\admin\\contentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|c:\\users\\lenovo\\source\\repos\\m\u00FCsekkin\\m\u00FCsekkin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|solutionrelative:m\u00FCsekkin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|c:\\users\\lenovo\\source\\repos\\m\u00FCsekkin\\m\u00FCsekkin\\models\\newslettersubscriber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CE4A0BB-A281-41C4-972E-581FEAC4DD1E}|M\u00FCsekkin\\M\u00FCsekkin.csproj|solutionrelative:m\u00FCsekkin\\models\\newslettersubscriber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContentList.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Views\\Admin\\ContentList.cshtml",
+              "RelativeDocumentMoniker": "M\u00FCsekkin\\Views\\Admin\\ContentList.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Views\\Admin\\ContentList.cshtml",
+              "RelativeToolTip": "M\u00FCsekkin\\Views\\Admin\\ContentList.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T14:53:38.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "M\u00FCsekkin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "M\u00FCsekkin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAmwIcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T14:52:56.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NewsletterSubscriber.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Models\\NewsletterSubscriber.cs",
+              "RelativeDocumentMoniker": "M\u00FCsekkin\\Models\\NewsletterSubscriber.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Models\\NewsletterSubscriber.cs",
+              "RelativeToolTip": "M\u00FCsekkin\\Models\\NewsletterSubscriber.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T14:50:30.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "M\u00FCsekkin\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "M\u00FCsekkin\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAuwCEBAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T14:31:51.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "M\u00FCsekkin\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\M\u00FCsekkin\\M\u00FCsekkin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "M\u00FCsekkin\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwvzEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T14:31:33.356Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+﻿@model List<Müsekkin.Models.Content>
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div style="min-height: 60vh; background-color: #ffffff; padding: 20px;">
+
+    @if (!Model.Any())
+    {
+        <!-- Eğer içerik bulunamazsa gösterilecek mesaj -->
+        <div class="text-center mt-5">
+            <h3>😔 Hiç içerik bulunamadı.</h3>
+            <p>Arama kriterlerinize veya seçtiğiniz kategoriye uygun içerik bulunamadı.</p>
+            <a href="/Home/Index" class="btn btn-success mt-3">Ana Sayfaya Dön</a>
+        </div>
+    }
+    else
+    {
+        <!-- İçerikler varsa normal içerikleri göster -->
+        <!-- Yazılar Bölümü -->
+        @if (Model.Any(c => c.ContentType == "Yazi"))
+        {
+            <div class="container mb-5">
+                <div class="row">
+
+                    <!-- Büyük Kart -->
+                    <div class="col-md-8 mb-4">
+                        @{
+                            var latestContent = Model.Where(c => c.ContentType == "Yazi").OrderByDescending(c => c.CreatedAt).FirstOrDefault();
+                        }
+                        @if (latestContent != null)
+                        {
+                            <div class="card border-0 shadow" style="border-radius: 15px; overflow: hidden;">
+                                <img src="@latestContent.ImagePath" class="card-img-top" alt="Büyük Görsel" style="object-fit: cover; height: 400px;">
+                                <div class="card-body" style="background: #fff;">
+                                    <h6 style="color: red;">
+                                        @{
+                                            string kategoriAdi = latestContent.CategoryId switch
+                                            {
+                                                1 => "Psikoloji",
+                                                2 => "Sosyoloji",
+                                                3 => "Edebiyat",
+                                                4 => "Gezi",
+                                                _ => "Kategori"
+                                            };
+                                        }
+                                        @kategoriAdi
+                                    </h6>
+                                    <h2 style="color: #00b050;">@latestContent.Title</h2>
+                                    <p class="text-muted small">YazıDeposu • @latestContent.CreatedAt.ToString("dd.MM.yyyy") • @latestContent.ViewCount görüntülendi</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Küçük Yazılar -->
+                    <div class="col-md-4">
+                        @foreach (var content in Model.Where(c => c.ContentType == "Yazi" && c.Id != latestContent?.Id).Take(5))
+                        {
+                            <div class="d-flex mb-4 align-items-center border-bottom pb-3">
+                                <img src="@(string.IsNullOrEmpty(content.ImagePath) ? "/uploads/default.png" : content.ImagePath)"
+                                     alt="Küçük Görsel"
+                                     style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 12px;" />
+                                <div>
+                                    <h6 style="color: red;">
+                                        @{
+                                            string kategoriAdi = content.CategoryId switch
+                                            {
+                                                1 => "Psikoloji",
+                                                2 => "Sosyoloji",
+                                                3 => "Edebiyat",
+                                                4 => "Gezi",
+                                                _ => "Kategori"
+                                            };
+                                        }
+                                        @kategoriAdi
+                                    </h6>
+                                    <a href="/Home/Details/@content.Id" class="text-dark" style="text-decoration: none; font-weight: bold;">
+                                        @content.Title
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        }
+
+        <!-- Videolar Bölümü -->
+        @if (Model.Any(c => c.ContentType == "Video"))
+        {
+            <div class="container mb-5">
+                <h2 class="mb-4">Videolar</h2>
+                <div class="row">
+                    @foreach (var content in Model.Where(c => c.ContentType == "Video"))
+                    {
+                        <div class="col-md-6 mb-4">
+                            <div class="card border-0 shadow-sm" style="border-radius: 10px;">
+                                <div class="card-body">
+                                    <h5><a href="/Home/Details/@content.Id" style="text-decoration:none; color:#00b050;">@content.Title</a></h5>
+                                    <video controls style="width: 100%; height: auto; margin-top: 10px; border-radius: 8px;">
+                                        <source src="@content.VideoPath" type="video/mp4">
+                                        Tarayıcınız video oynatmayı desteklemiyor.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+        <!-- Resimler Bölümü -->
+        @if (Model.Any(c => c.ContentType == "Resim"))
+        {
+            <div class="container mb-5">
+                <h2 class="mb-4">Resimler</h2>
+                <div class="row">
+                    @foreach (var content in Model.Where(c => c.ContentType == "Resim"))
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm" style="border-radius: 10px;">
+                                <img src="@content.ImagePath" alt="Resim" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0;" />
+                                <div class="card-body">
+                                    <h5><a href="/Home/Details/@content.Id" style="text-decoration:none; color:#00b050;">@content.Title</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+
+</div>
+
+<form asp-action="SubscribeNewsletter" method="post">
+    <div class="form-group">
+        <label for="email">E-posta adresinizi girin:</label>
+        <input type="email" id="email" name="email" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Bültene Kaydol</button>
+</form>
+
+@if (TempData["SubscriptionMessage"] != null)
+{
+    <div class="alert alert-success mt-2">
+        @TempData["SubscriptionMessage"]
+    </div>
+}
+

@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - YazıDeposu</title>
+
+    <!-- Bootstrap ve Font -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+        /* Logo yazısı */
+        .logo-green {
+            color: #00b050;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .logo-gray {
+            color: #555;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        /* Menü yazıları */
+        .menu-link {
+            color: #555;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 20px;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+            .menu-link:hover {
+                color: #00b050;
+            }
+
+        /* Arama kutusu ve butonlar */
+        .search-input {
+            border-radius: 25px;
+            background-color: #f1f3f5;
+            border: none;
+            padding-left: 40px;
+        }
+
+        .search-button, .login-button, .register-button {
+            border-radius: 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+            .search-button:hover, .login-button:hover, .register-button:hover {
+                background-color: #218838;
+            }
+
+        .dropdown-menu {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+        }
+
+        /* Sosyal Medya İkonları */
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f1f3f5;
+            padding: 5px;
+            transition: all 0.3s ease;
+        }
+
+            .social-icon:hover {
+                border: 2px solid #00b050;
+                background-color: #ffffff;
+            }
+    </style>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #ffffff;">
+
+    <!-- Üst Logo -->
+    <div class="d-flex justify-content-center align-items-center py-4" style="background-color: #f1f3f5;">
+        <div>
+            <span class="logo-green">Yazı</span><span class="logo-gray">Deposu</span>
+        </div>
+    </div>
+
+    <!-- Menü -->
+    <div class="container py-3 d-flex align-items-center justify-content-between">
+
+        <!-- Menü Linkleri -->
+        <div class="d-flex align-items-center">
+            <div class="dropdown me-3">
+                <a class="menu-link dropdown-toggle" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Kategoriler
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
+                    <li><a class="dropdown-item" href="/Home/CategoryFilter/1">Psikoloji</a></li>
+                    <li><a class="dropdown-item" href="/Home/CategoryFilter/2">Sosyoloji</a></li>
+                    <li><a class="dropdown-item" href="/Home/CategoryFilter/3">Edebiyat</a></li>
+                    <li><a class="dropdown-item" href="/Home/CategoryFilter/4">Gezi</a></li>
+                </ul>
+            </div>
+
+            <a class="menu-link" href="/Home/FadimeDefter">FadimeDefter</a>
+            <a class="menu-link" href="/Home/FadimeKadraj">FadimeKadraj</a>
+            <a class="menu-link" href="/Home/FadimeTV">FadimeTV</a>
+        </div>
+
+        <!-- Arama ve Giriş/Kayıt -->
+        <div class="d-flex align-items-center">
+            <form class="d-flex" action="/Home/Index" method="get">
+                <input class="form-control search-input me-2" type="search" placeholder="Ara" name="searchQuery">
+            </form>
+            <a class="btn login-button" href="/Admin/Login">➔ Giriş Yap</a>
+            <a class="btn register-button" href="/Admin/Register">➕ Kayıt Ol</a>
+        </div>
+
+    </div>
+
+    <!-- Sayfa İçeriği -->
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-2 pt-2 border-top" style="background-color: #ffffff; padding-bottom: 10px;">
+        <div class="container">
+
+            <!-- Sosyal Medya ve Bülten -->
+            <div class="row align-items-center mb-2">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h5 class="fw-bold" style="font-family: 'Patrick Hand', cursive;">Sosyal Medya</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+                        <a href="#"><img src="/icons/facebook.png" alt="Facebook" class="social-icon"></a>
+                        <a href="#"><img src="/icons/instagram.png" alt="Instagram" class="social-icon"></a>
+                        <a href="#"><img src="/icons/twitter.png" alt="Twitter" class="social-icon"></a>
+                        <a href="#"><img src="/icons/youtube.png" alt="YouTube" class="social-icon"></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <button class="btn btn-light rounded-pill px-4 py-2" style="font-family: 'Patrick Hand', cursive;">
+                        📩 Bültene kaydolun
+                    </button>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- Alt Menü -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <span style="font-family: 'Patrick Hand', cursive; font-size: 32px; font-weight: bold;">
+                        <span style="color: #00b050;">Yazı</span><span style="color: #555;">Deposu</span>
+                    </span>
+                </div>
+
+                <div class="col-md-6 d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
+                    <a href="#" class="text-muted text-decoration-none">Künye</a>
+                    <a href="#" class="text-muted text-decoration-none">Hakkımızda</a>
+                    <a href="#" class="text-muted text-decoration-none">İletişim</a>
+                    <a href="#" class="text-muted text-decoration-none">Yazar Ol</a>
+                    <a href="#" class="text-muted text-decoration-none">Reklam & Sponsorluk</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-2 text-muted" style="font-size: 14px;">
+                YazıDeposu © Copyright 2025
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
