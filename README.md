@@ -1,0 +1,1 @@
+Bülten aktive edilecek.
